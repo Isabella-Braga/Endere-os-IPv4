@@ -1,0 +1,20 @@
+def solucao(inputString):
+    parts = inputString.split('.')
+    
+    return len(parts) == 4 and all(part.isdigit() and 0 <= int(part) <= 255 and (len(part) == 1 or part[0] != '0') for part in parts)
+
+print(solucao("172.16.254.1"))  
+print(solucao("0.254.255.0"))   
+print(solucao("172.316.254.1")) 
+print(solucao(".254.255.0"))    
+print(solucao("254..255.0"))    
+print(solucao("254.255..0"))    
+print(solucao("254.255.0."))    
+print(solucao("a.16.254.1"))    
+print(solucao("172.b.254.1"))   
+print(solucao("172.16.c.1"))    
+print(solucao("172.16.254.d"))  
+print(solucao("0172.16.254.1")) 
+print(solucao("172.016.254.1")) 
+print(solucao("172.16.0254.1"))
+print(solucao("172.16.254.01")) 
